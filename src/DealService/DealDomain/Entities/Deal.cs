@@ -23,14 +23,24 @@ public class Deal
     public DealStatus Status { get; set; }
 
     /// <summary>
-    /// Идентификатор клиента
+    /// Полное имя клиента
     /// </summary>
-    public Guid? CustomerId { get; set; }
+    public string? CustomerFullName { get; set; }
 
     /// <summary>
-    /// Клиент
+    /// Номер телефона клиента
     /// </summary>
-    public Customer? Customer { get; set; }
+    public string CustomerPhoneNumber { get; set; } = default!;
+
+    /// <summary>
+    /// Город клиента
+    /// </summary>
+    public string? CustomerCity { get; set; }
+
+    /// <summary>
+    /// Адрес клиента
+    /// </summary>
+    public string? CustomerAddress { get; set; }
 
     /// <summary>
     /// Провайдер

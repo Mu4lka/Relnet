@@ -6,9 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\DealApiContracts\DealApiContracts.csproj" />
-    <ProjectReference Include="..\DealDomain\DealDomain.csproj" />
-  </ItemGroup>
-
 </Project>
