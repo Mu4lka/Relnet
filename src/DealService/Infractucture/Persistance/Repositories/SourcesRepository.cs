@@ -1,9 +1,10 @@
 ﻿using DealDomain.Entities;
 using DealDomain.Obstructions.Repositories;
+using Infractucture.Persistance.Efcore;
 
 namespace Infractucture.Persistance.Repositories;
 
-internal class SourcesRepository : ISourcesRepository
+internal class SourcesRepository(AppDbContext _dbContext) : ISourcesRepository
 {
     public Task CreateAsync(Source source)
     {

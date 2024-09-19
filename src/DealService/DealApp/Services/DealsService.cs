@@ -1,27 +1,32 @@
 ﻿using DealApiContracts.Dto.Deal;
 using DealApp.Services.Interfaces;
 using DealDomain;
+using DealDomain.Obstructions.Repositories;
+using DealDomain.Utils;
 
 namespace DealApp.Services;
 
-public class DealsService : IDealsService
+/// <summary>
+/// Сервис сделок
+/// </summary>
+public class DealsService(IDealsRepository _dealsRepository) : IDealsService
 {
-    public Task CreateAsync(CreateDealDto deal)
+    public Task<Result> CreateAsync(CreateDealDto deal)
     {
         throw new NotImplementedException();
     }
 
-    public Task DeleteAsync(Guid id)
+    public Task<Result> DeleteAsync(Guid id)
     {
         throw new NotImplementedException();
     }
 
-    public Task<ICollection<GetDealDto>> GetByFilterAsync(DealFilter filter)
+    public Task<Result<ICollection<GetDealDto>>> GetByFilterAsync(DealFilter filter)
     {
         throw new NotImplementedException();
     }
 
-    public Task UpdateAsync(UpdateDealDto deal)
+    public Task<Result> UpdateAsync(UpdateDealDto deal)
     {
         throw new NotImplementedException();
     }

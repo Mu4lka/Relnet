@@ -1,23 +1,26 @@
 ﻿using DealDomain.Entities;
 using DealDomain.Obstructions.Repositories;
+using Infractucture.Persistance.Efcore;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infractucture.Persistance.Repositories;
 
-internal class RealtorsRepository : IRealtorsRepository
+internal class RealtorsRepository(AppDbContext _dbContext) : IRealtorsRepository
 {
-    public Task CreateAsync(Realtor realtor)
+    public async Task CreateAsync(Realtor realtor)
     {
-        throw new NotImplementedException();
+        await _dbContext.Realtors.AddAsync(realtor);
+        await _dbContext.SaveChangesAsync();
     }
 
-    public Task DeleteAsync(Guid id)
+    public async Task DeleteAsync(Guid id)
     {
-        throw new NotImplementedException();
+        await _dbContext.Realtors.Where(r => r.Id == id).ExecuteDeleteAsync();
     }
 
-    public Task<ICollection<Realtor>> GetAsync()
+    public async Task<ICollection<Realtor>> GetAsync()
     {
-        throw new NotImplementedException();
+        return await _dbContext.Realtors.ToListAsync();
     }
 
     public Task UpdateAsync(Realtor realtor)
