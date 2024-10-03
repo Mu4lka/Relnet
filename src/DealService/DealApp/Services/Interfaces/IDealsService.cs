@@ -1,4 +1,5 @@
-﻿using DealApiContracts.Dto.Deal;
+﻿using DealApiContracts.Dto;
+using DealApiContracts.Requests;
 using DealDomain;
 using DealDomain.Utils;
 
@@ -12,17 +13,22 @@ public interface IDealsService
     /// <summary>
     /// Создать
     /// </summary>
-    Task<Result> CreateAsync(CreateDealDto deal);
+    Task<Result<Guid>> CreateAsync(CreateDealRequest request);
 
     /// <summary>
     /// Получить сделки по фильтру
     /// </summary>
-    Task<Result<ICollection<GetDealDto>>> GetByFilterAsync(DealFilter filter);
+    Task<Result<ICollection<GetDealDto>>> GetByFilterAsync();
 
     /// <summary>
     /// Обновить
     /// </summary>
-    Task<Result> UpdateAsync(UpdateDealDto deal);
+    Task<Result> UpdateAsync(UpdateDealRequest request);
+
+    /// <summary>
+    /// Обновить
+    /// </summary>
+    Task<Result> UpdateStatusAsync(UpdateDealStatusRequest request);
 
     /// <summary>
     /// Удалить

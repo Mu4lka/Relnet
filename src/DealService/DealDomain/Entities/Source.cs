@@ -3,7 +3,7 @@
 /// <summary>
 /// Источник, откуда сделка пришла
 /// </summary>
-public class Source
+public record class Source
 {
     /// <summary>
     /// Идентификатор

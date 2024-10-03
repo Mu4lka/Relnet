@@ -1,4 +1,5 @@
-﻿using DealApiContracts.Dto.Realtor;
+﻿using DealApiContracts.Dto;
+using DealApiContracts.Requests;
 using DealDomain.Utils;
 
 namespace DealApp.Services.Interfaces;
@@ -11,7 +12,7 @@ public interface IRealtorsService
     /// <summary>
     /// Создать
     /// </summary>
-    Task<Result> CreateAsync(CreateRealtorDto realtor);
+    Task<Result> CreateAsync(CreateRealtorRequest request);
 
     /// <summary>
     /// Получить всех риэлторов
@@ -21,7 +22,7 @@ public interface IRealtorsService
     /// <summary>
     /// Обновить
     /// </summary>
-    Task<Result> UpdateAsync(UpdateRealtorDto realtor);
+    Task<Result> UpdateAsync(UpdateRealtorRequest request);
 
     /// <summary>
     /// Удалить

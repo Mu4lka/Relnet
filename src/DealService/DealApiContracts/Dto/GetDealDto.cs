@@ -1,7 +1,4 @@
-﻿using DealApiContracts.Dto.Realtor;
-using DealApiContracts.Dto.Source;
-
-namespace DealApiContracts.Dto.Deal;
+﻿namespace DealApiContracts.Dto;
 
 public class GetDealDto
 {

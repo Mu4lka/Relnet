@@ -3,7 +3,7 @@
 /// <summary>
 /// Риелтор
 /// </summary>
-public class Realtor
+public record class Realtor
 {
     /// <summary>
     /// Идентификатор

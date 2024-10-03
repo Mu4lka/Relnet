@@ -1,4 +1,6 @@
-﻿using DealApiContracts.Dto.Realtor;
+﻿using DealApiContracts.Dto;
+using DealApiContracts.Dto.Realtor;
+using DealApiContracts.Requests;
 using DealApp.Services.Interfaces;
 using DealDomain.Obstructions.Repositories;
 using DealDomain.Utils;
@@ -10,7 +12,7 @@ namespace DealApp.Services;
 /// </summary>
 public class RealtorsService(IRealtorsRepository _realtorsRepository) : IRealtorsService
 {
-    public Task<Result> CreateAsync(CreateRealtorDto realtor)
+    public Task<Result> CreateAsync(CreateRealtorRequest request)
     {
         throw new NotImplementedException();
     }
@@ -25,7 +27,7 @@ public class RealtorsService(IRealtorsRepository _realtorsRepository) : IRealtor
         throw new NotImplementedException();
     }
 
-    public Task<Result> UpdateAsync(UpdateRealtorDto realtor)
+    public Task<Result> UpdateAsync(UpdateRealtorRequest request)
     {
         throw new NotImplementedException();
     }

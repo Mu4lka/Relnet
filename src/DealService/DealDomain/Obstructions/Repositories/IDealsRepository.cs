@@ -1,4 +1,5 @@
 ﻿using DealDomain.Entities;
+using DealDomain.Enums;
 
 namespace DealDomain.Obstructions.Repositories;
 
@@ -10,7 +11,7 @@ public interface IDealsRepository
     /// <summary>
     /// Создать
     /// </summary>
-    Task CreateAsync(Deal deal);
+    Task<Guid> CreateAsync(Deal deal);
 
     /// <summary>
     /// Получить сделки по фильтру
@@ -21,6 +22,11 @@ public interface IDealsRepository
     /// Обновить
     /// </summary>
     Task UpdateAsync(Deal deal);
+
+    /// <summary>
+    /// Обновить статус
+    /// </summary>
+    Task UpdateStatusAsync(Guid dealId, DealStatus status);
 
     /// <summary>
     /// Удалить

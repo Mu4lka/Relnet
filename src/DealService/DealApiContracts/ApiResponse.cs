@@ -18,5 +18,5 @@ public class ApiResponse
 
 public class ApiResponse<TData> : ApiResponse
 {
-    public TData Data { get; set; }
+    public TData? Data { get; set; }
 }

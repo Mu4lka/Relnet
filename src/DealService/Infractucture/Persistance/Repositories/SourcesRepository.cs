@@ -1,28 +1,32 @@
 ﻿using DealDomain.Entities;
 using DealDomain.Obstructions.Repositories;
-using Infractucture.Persistance.Efcore;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infractucture.Persistance.Repositories;
 
-internal class SourcesRepository(AppDbContext _dbContext) : ISourcesRepository
+internal class SourcesRepository(DealsDbContext _dbContext) : ISourcesRepository
 {
-    public Task CreateAsync(Source source)
+    public async Task CreateAsync(Source source)
     {
-        throw new NotImplementedException();
+        await _dbContext.Sources.AddAsync(source);
+        await _dbContext.SaveChangesAsync();
     }
 
-    public Task DeleteAsync(Guid id)
-    {
-        throw new NotImplementedException();
-    }
+    public async Task DeleteAsync(Guid id)
+        => await _dbContext.Sources
+            .Where(s => s.Id == id)
+            .ExecuteDeleteAsync();
 
-    public Task<ICollection<Source>> GetAsync()
-    {
-        throw new NotImplementedException();
-    }
+    public async Task<ICollection<Source>> GetAsync()
+        => await _dbContext.Sources.ToListAsync();
 
-    public Task UpdateAsync(Source source)
+    public async Task UpdateAsync(Source source)
     {
-        throw new NotImplementedException();
+        await _dbContext.Sources
+            .Where(s => s.Id == source.Id)
+            .ExecuteUpdateAsync(setters => setters
+                .SetProperty(s => s.Url, source.Url)
+                .SetProperty(s => s.Title, source.Title)
+                );
     }
 }

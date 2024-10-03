@@ -1,4 +1,5 @@
-﻿using DealApiContracts.Dto.Source;
+﻿using DealApiContracts.Dto;
+using DealApiContracts.Requests;
 using DealDomain.Utils;
 
 namespace DealApp.Services.Interfaces;
@@ -11,7 +12,7 @@ public interface ISourcesService
     /// <summary>
     /// Создать
     /// </summary>
-    Task<Result> CreateAsync(CreateSourceDto realtor);
+    Task<Result> CreateAsync(CreateSourceRequest request);
 
     /// <summary>
     /// Получить все источники
@@ -21,7 +22,7 @@ public interface ISourcesService
     /// <summary>
     /// Обновить
     /// </summary>
-    Task<Result> UpdateAsync(UpdateSourceDto realtor);
+    Task<Result> UpdateAsync(UpdateSourceRequest request);
 
     /// <summary>
     /// Удалить

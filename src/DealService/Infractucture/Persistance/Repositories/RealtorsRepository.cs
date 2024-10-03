@@ -1,11 +1,10 @@
 ﻿using DealDomain.Entities;
 using DealDomain.Obstructions.Repositories;
-using Infractucture.Persistance.Efcore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infractucture.Persistance.Repositories;
 
-internal class RealtorsRepository(AppDbContext _dbContext) : IRealtorsRepository
+internal class RealtorsRepository(DealsDbContext _dbContext) : IRealtorsRepository
 {
     public async Task CreateAsync(Realtor realtor)
     {
@@ -14,17 +13,20 @@ internal class RealtorsRepository(AppDbContext _dbContext) : IRealtorsRepository
     }
 
     public async Task DeleteAsync(Guid id)
-    {
-        await _dbContext.Realtors.Where(r => r.Id == id).ExecuteDeleteAsync();
-    }
+        => await _dbContext.Realtors
+            .Where(r => r.Id == id)
+            .ExecuteDeleteAsync();
+
 
     public async Task<ICollection<Realtor>> GetAsync()
-    {
-        return await _dbContext.Realtors.ToListAsync();
-    }
+        => await _dbContext.Realtors.ToListAsync();
 
-    public Task UpdateAsync(Realtor realtor)
+    public async Task UpdateAsync(Realtor realtor)
     {
-        throw new NotImplementedException();
+        await _dbContext.Realtors
+             .Where(r => r.Id == realtor.Id)
+             .ExecuteUpdateAsync(setters => setters
+                 .SetProperty(r => r.Name, realtor.Name)
+                 .SetProperty(r => r.PhoneNumber, realtor.PhoneNumber));
     }
 }

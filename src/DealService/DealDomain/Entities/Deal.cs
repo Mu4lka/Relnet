@@ -5,7 +5,7 @@ namespace DealDomain.Entities;
 /// <summary>
 /// Сделка
 /// </summary>
-public class Deal
+public record class Deal
 {
     /// <summary>
     /// Идентификатор
