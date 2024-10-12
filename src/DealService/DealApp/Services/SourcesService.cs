@@ -1,9 +1,9 @@
 ﻿using DealApiContracts.Dto;
-using DealApiContracts.Dto.Source;
 using DealApiContracts.Requests;
 using DealApp.Services.Interfaces;
-using DealDomain.Obstructions.Repositories;
-using DealDomain.Utils;
+using DealDomain.Abstractions.Repositories;
+using Utils;
+
 
 namespace DealApp.Services;
 

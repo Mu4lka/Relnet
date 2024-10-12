@@ -2,10 +2,10 @@
 using DealApiContracts.Requests;
 using DealApp.Services.Interfaces;
 using DealDomain;
+using DealDomain.Abstractions.Repositories;
 using DealDomain.Entities;
 using DealDomain.Enums;
-using DealDomain.Obstructions.Repositories;
-using DealDomain.Utils;
+using Utils;
 
 namespace DealApp.Services;
 

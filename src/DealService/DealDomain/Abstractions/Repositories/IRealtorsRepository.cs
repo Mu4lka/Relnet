@@ -1,6 +1,6 @@
 ﻿using DealDomain.Entities;
 
-namespace DealDomain.Obstructions.Repositories;
+namespace DealDomain.Abstractions.Repositories;
 
 /// <summary>
 /// Репозиторий риэлторов

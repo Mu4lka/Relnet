@@ -1,7 +1,7 @@
 ﻿using DealDomain.Entities;
 using DealDomain.Enums;
 
-namespace DealDomain.Obstructions.Repositories;
+namespace DealDomain.Abstractions.Repositories;
 
 /// <summary>
 /// Репозиторий сделок

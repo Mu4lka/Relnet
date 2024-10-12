@@ -1,7 +1,6 @@
 ﻿using DealApiContracts.Dto;
 using DealApiContracts.Requests;
-using DealDomain;
-using DealDomain.Utils;
+using Utils;
 
 namespace DealApp.Services.Interfaces;
 

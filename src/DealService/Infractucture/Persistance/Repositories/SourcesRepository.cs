@@ -1,5 +1,5 @@
-﻿using DealDomain.Entities;
-using DealDomain.Obstructions.Repositories;
+﻿using DealDomain.Abstractions.Repositories;
+using DealDomain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infractucture.Persistance.Repositories;

@@ -8,8 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Utils\Utils.csproj" />
-    <ProjectReference Include="..\DealApiContracts\DealApiContracts.csproj" />
-    <ProjectReference Include="..\DealDomain\DealDomain.csproj" />
+    <ProjectReference Include="..\IdentityContracts\IdentityContracts.csproj" />
   </ItemGroup>
 
 </Project>

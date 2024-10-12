@@ -1,4 +1,4 @@
-﻿namespace DealDomain.Utils;
+﻿namespace Utils;
 
 public interface ITimeProvider
 {

@@ -1,4 +1,4 @@
-﻿using DealDomain.Obstructions.Repositories;
+﻿using DealDomain.Abstractions.Repositories;
 using Infractucture.Persistance.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
